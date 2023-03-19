@@ -1,0 +1,285 @@
+.frist {
+    width: 100vw;
+    position: relative;
+    border-bottom: 0.6em solid rgba(20, 20, 20, 1);
+
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        .logo {
+            width: 120px;
+        }
+
+        .headright {
+            display: flex;
+            gap: 0.5em;
+
+            .lang {
+                padding: 0.5em 1em;
+                border-radius: 0.3rem;
+                border: 1px solid white;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.4);
+
+            }
+
+            .login {
+                color: white;
+                background-color: red;
+                border-radius: 0.3rem;
+                border: none;
+                padding: 0.5em 1em;
+            }
+        }
+    }
+
+    .content {
+        max-width: 700px;
+        text-align: center;
+        margin: 0 auto;
+        color: white;
+        padding: 10em 6em 4em 6em;
+        position: relative;
+        z-index: 1;
+
+        .big {
+            font-size: 3rem;
+        }
+
+        .secon {
+            font-size: 1.5rem;
+            margin-top: 0.6em;
+        }
+
+        .text {
+            font-size: 1rem;
+            margin-top: 0.6em;
+        }
+
+        .form {
+            position: relative;
+            margin: 0 auto;
+            margin-top: 2em;
+            margin-bottom: 2em;
+            text-align: center;
+            max-width: 600px;
+            display: flex;
+            flex-direction: row;
+
+            .email {
+                padding: 1em 1em;
+                border-radius: 0.2em;
+                border: none;
+                margin-right: 0.8em;
+                border: 1px solid white;
+                background-color: rgba(0, 0, 0, 0.4);
+                color: white;
+                flex: 1;
+                height: 1em;
+            }
+
+            .btn {
+                padding: 1em 1em;
+                background-color: red;
+                color: white;
+                border: none;
+                border-radius: 0.2em;
+                line-height: 1em;
+            }
+        }
+    }
+
+
+    .blackc {
+        position: absolute;
+        top: 0;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .bgpig {
+        position: absolute;
+        top: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.second {
+    width: 100%;
+    background-color: black;
+    padding: 2em 0;
+    border-bottom: 0.6em solid rgba(20, 20, 20, 1);
+    .content {
+
+        margin: 0 auto;
+        max-width: 1200px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+
+        .text {
+            flex: 1;
+            color: white;
+
+            .title {
+                font-size: 3em;
+            }
+
+            .text {
+                font-size: 1.2em;
+                margin-top: 1em;
+                line-height: 1.5em;
+            }
+        }
+
+        .img {
+            flex: 1;
+
+            .one {
+                max-width: 100%;
+            }
+        }
+
+    }
+}
+
+.three {
+    width: 100%;
+    background-color: black;
+    padding: 2em 0;
+    border-bottom: 0.6em solid rgba(20, 20, 20, 1);
+    .content {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1200px;
+        align-items: center;
+
+        .text {
+            color: white;
+
+            .title {
+                font-size: 3em;
+            }
+
+            .text {
+                font-size: 1.2em;
+                margin-top: 1em;
+                line-height: 1.5em;
+            }
+        }
+
+        .pit {
+
+            .twoimg {
+                max-width: 100%;
+            }
+        }
+    }
+
+
+}
+
+.four{
+    background-color: black;
+    padding: 2em 0;
+    width: 100%;
+    border-bottom: 0.6em solid rgba(20, 20, 20, 1);
+    .content{
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        width: 90%;
+        margin: 0 auto;
+        .text{
+            flex: 1;
+            color: white;
+            .title{
+                font-size: 3rem;
+            }
+            .text{
+                font-size: 1.2rem;
+                margin-top: 1em;
+            }
+        }
+        .pit{
+            flex: 1;
+            .four1{
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.problem{
+    width: 100%;
+    background-color: black;
+    padding: 2em 0;
+    border-bottom: 0.6em solid rgba(20, 20, 20, 1);
+    .content{
+        width: 90%;
+        max-width: 1200px;
+        color: white;
+        margin: 0 auto;
+        // box-sizing: border-box;
+        .title{
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        .item{
+            width: 100%;
+            background-color: rgb(100, 100, 100);
+            padding: 1em 1em ;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0.4em 0;
+            box-sizing: border-box;
+            .icon{
+                width: 30px;
+                height: 30px;
+                background-color: #fff;
+            }
+        }
+        .item-text{
+            width: 100%;
+            background-color: rgb(100, 100, 100);
+            padding: 1em 1em ;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.button{
+    background-color: black;
+    ul{
+        width: 90%;
+        padding: 3em 0;
+        margin: 0 auto;
+        color: #c9c9c9;
+        list-style: none;
+        max-width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        li{
+            // flex: 33%;
+            width: 250px;
+            max-width: 400px;
+            margin-bottom: 1em;
+        }
+    }
+}
