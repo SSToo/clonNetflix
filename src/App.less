@@ -1,9 +1,11 @@
-*,html,body{
+*,
+html,
+body {
     margin: 0;
     padding: 0;
 }
 
-#lang:checked~ul{
+#lang:checked~ul {
     display: block;
 }
 
@@ -28,10 +30,12 @@
             gap: 0.5em;
             align-items: center;
             position: relative;
-            .check{
+
+            .check {
                 display: none;
             }
-            ul{
+
+            ul {
                 display: none;
                 position: absolute;
                 background-color: #fff;
@@ -40,7 +44,8 @@
                 padding: 0.5em 1em;
                 border-radius: 0.3rem;
                 border: rgba(0, 0, 0, 0) solid 1px;
-                li{
+
+                li {
                     text-align: center;
                     // margin: 0.3em auto;
                     padding: .3em 0;
@@ -167,7 +172,7 @@
             .text {
                 font-size: 1.2em;
                 margin-top: 1em;
-                line-height: 1.5em;
+                line-height: 2em;
             }
         }
 
@@ -207,7 +212,7 @@
             .text {
                 font-size: 1.2em;
                 margin-top: 1em;
-                line-height: 1.5em;
+                line-height: 2em;
             }
         }
 
@@ -246,6 +251,7 @@
             .text {
                 font-size: 1.2rem;
                 margin-top: 1em;
+                line-height: 2em;
             }
         }
 
@@ -290,9 +296,16 @@
             box-sizing: border-box;
 
             .icon {
-                width: 30px;
-                height: 30px;
-                background-color: #fff;
+                i {
+                    transform-box: fill-box;
+                    transform-origin: center;
+                    
+                }
+
+                // width: 30px;
+                // height: 30px;
+                // transform-box:fill-box; 
+                // transform-origin: center;
             }
         }
 
@@ -302,6 +315,7 @@
             padding: 1em 1em;
             box-sizing: border-box;
             font-size: 1.5rem;
+            line-height: 2rem;
         }
     }
 }
@@ -354,6 +368,7 @@
         .content {
             flex-direction: column;
             gap: 20px;
+
             .text {
                 .title {
                     font-size: 2rem;
@@ -366,7 +381,6 @@
 
         }
     }
-
 
     .problem {
         .content {
@@ -383,15 +397,13 @@
                     width: 30px;
                     height: 30px;
                     background-color: #fff;
+
                 }
             }
 
             .item-text {
-                width: 100%;
-                background-color: rgb(100, 100, 100);
-                padding: 1em 1em;
-                box-sizing: border-box;
-                font-size: 1.5rem;
+                line-height: 2rem;
+                font-size: 1rem;
             }
         }
     }

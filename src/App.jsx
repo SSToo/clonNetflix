@@ -6,38 +6,47 @@ import two from './assets/two.jpg'
 import four from './assets/four.png'
 import { useState } from 'react'
 
+import { motion } from "framer-motion"
+
 
 function App() {
-  // const [show1, setShow1] = useState('')
   const [name, setName] = useState('');
 
   function hide(value) {
     if (value === name) {
       setName('none')
+      setRotate(45)
     } else {
       setName(value)
+      setRotate(0)
     }
   }
 
+  const [rotate, setRotate] = useState(45)
+  // const [iconrot, setIconrot] = useState(false)
+  // function rot() {
+  //   if(name ===data.id){
+  //     setRotate(45)
+  //   }else{
+  //     setRotate(0)
+  //   }
+  // }
+
+  const data = [
+    { id:"1",title: "Netflix是什么？", text: "Netflix 是串流服務，透過數千種可連結網路的行動裝置，提供各種獲獎肯定的節目、電影、動畫、紀錄片等精彩內容。只要支付一筆經濟實惠的月費，就能隨時隨地，盡情觀賞，毫無廣告。時時都有新的內容供您探索，而且每星期都會加入新的節目與電影！" },
+    { id:"2",title: "Netflix如何续费？", text: "只要支付一筆固定月費，就能用您的智慧型手機、平板電腦、智慧型電視、筆記型電腦或串流裝置觀賞 Netflix。各種方案介於每月 HK$63 至 HK$93。無額外費用，不須綁約。" },
+    { id:"3",title: "如何取消？", text: "Netflix 彈性十足。沒有難懂的合約，也不須綁約。點個兩下，就能線上輕鬆取消您的帳戶。無取消費用，可隨時開始或停用您的帳戶。" }
+  ]
+
   return (
     <>
-      {/* <div className='fortest'>
-      <input type="checkbox" name="" id="show" />
-      <label htmlFor="show">
-        <div className='test'></div>
-      </label>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-      </ul>
-    </div> */}
       <div className='frist'>
         <div className='head'>
           <div>
             <img src={logo} alt="" className='logo' />
           </div>
           <div className='headright'>
-            <input type="checkbox" name="" id="lang" className='check'/>
+            <input type="checkbox" name="" id="lang" className='check' />
             <label htmlFor="lang"> <div className='lang'>中文</div></label>
             <ul>
               <li>中文</li>
@@ -97,14 +106,7 @@ function App() {
       <div className="problem">
         <div className="content">
           <div className="title">常見問題解答</div>
-          <div className='item' onClick={() => { hide('one') }}>Netflix是什么？ <div className='icon'></div></div>
-          {name === "one" &&
-            <div className='item-text' >Netflix 是串流服務，透過數千種可連結網路的行動裝置，提供各種獲獎肯定的節目、電影、動畫、紀錄片等精彩內容。
-              只要支付一筆經濟實惠的月費，就能隨時隨地，盡情觀賞，毫無廣告。時時都有新的內容供您探索，而且每星期都會加入新的節目與電影！</div>}
-          <div className='item' onClick={() => { hide('two') }}>Netflix如何续费？ <div className='icon'></div></div>
-          {name === "two" && <div className='item-text'>只要支付一筆固定月費，就能用您的智慧型手機、平板電腦、智慧型電視、筆記型電腦或串流裝置觀賞 Netflix。各種方案介於每月 HK$63 至 HK$93。無額外費用，不須綁約。</div>}
-          <div className='item' onClick={() => { hide('three') }}>如何取消？ <div className='icon'></div></div>
-          {name === 'three' && <div className='item-text'>Netflix 彈性十足。沒有難懂的合約，也不須綁約。點個兩下，就能線上輕鬆取消您的帳戶。無取消費用，可隨時開始或停用您的帳戶。</div>}
+          {data.map(item => (<Icon data={item} name={name} hide={hide} key={item.id}  rotate={rotate}/>))}
         </div>
       </div>
       <div className="button">
@@ -142,3 +144,16 @@ function App() {
 }
 
 export default App
+
+export function Icon({ data, name, hide ,rotate}) {
+
+  
+  return (
+    <>
+      <div className='item' onClick={() => { hide(data.id)}}>{data.title}
+        <motion.i className="iconfont" animate={{ rotate}}>&#xe618; </motion.i> </div>
+      {name === data.id && <div className='item-text'>{data.text}</div>}
+    </>
+  )
+}
+
