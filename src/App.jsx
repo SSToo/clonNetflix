@@ -10,32 +10,21 @@ import { motion } from "framer-motion"
 
 
 function App() {
-  const [name, setName] = useState('');
+
+  // show是个控制变量switch开关
+  const [show, setShow] = useState('');
 
   function hide(value) {
-    if (value === name) {
-      setName('none')
-      setRotate(45)
+    if (value === show) {
+      setShow('none')
     } else {
-      setName(value)
-      setRotate(0)
+      setShow(value)
     }
   }
-
-  const [rotate, setRotate] = useState(45)
-  // const [iconrot, setIconrot] = useState(false)
-  // function rot() {
-  //   if(name ===data.id){
-  //     setRotate(45)
-  //   }else{
-  //     setRotate(0)
-  //   }
-  // }
-
   const data = [
-    { id:"1",title: "Netflix是什么？", text: "Netflix 是串流服務，透過數千種可連結網路的行動裝置，提供各種獲獎肯定的節目、電影、動畫、紀錄片等精彩內容。只要支付一筆經濟實惠的月費，就能隨時隨地，盡情觀賞，毫無廣告。時時都有新的內容供您探索，而且每星期都會加入新的節目與電影！" },
-    { id:"2",title: "Netflix如何续费？", text: "只要支付一筆固定月費，就能用您的智慧型手機、平板電腦、智慧型電視、筆記型電腦或串流裝置觀賞 Netflix。各種方案介於每月 HK$63 至 HK$93。無額外費用，不須綁約。" },
-    { id:"3",title: "如何取消？", text: "Netflix 彈性十足。沒有難懂的合約，也不須綁約。點個兩下，就能線上輕鬆取消您的帳戶。無取消費用，可隨時開始或停用您的帳戶。" }
+    { id: "1", title: "Netflix是什么？", text: "Netflix 是串流服務，透過數千種可連結網路的行動裝置，提供各種獲獎肯定的節目、電影、動畫、紀錄片等精彩內容。只要支付一筆經濟實惠的月費，就能隨時隨地，盡情觀賞，毫無廣告。時時都有新的內容供您探索，而且每星期都會加入新的節目與電影！" },
+    { id: "2", title: "Netflix如何续费？", text: "只要支付一筆固定月費，就能用您的智慧型手機、平板電腦、智慧型電視、筆記型電腦或串流裝置觀賞 Netflix。各種方案介於每月 HK$63 至 HK$93。無額外費用，不須綁約。" },
+    { id: "3", title: "如何取消？", text: "Netflix 彈性十足。沒有難懂的合約，也不須綁約。點個兩下，就能線上輕鬆取消您的帳戶。無取消費用，可隨時開始或停用您的帳戶。" }
   ]
 
   return (
@@ -106,7 +95,8 @@ function App() {
       <div className="problem">
         <div className="content">
           <div className="title">常見問題解答</div>
-          {data.map(item => (<Icon data={item} name={name} hide={hide} key={item.id}  rotate={rotate}/>))}
+          {data.map(item => (show === item.id ? <Icon data={item} show={show} hide={hide} key={item.id} rotate={45} /> : 
+          <Icon data={item} show={show} hide={hide} key={item.id} rotate={0} />))}
         </div>
       </div>
       <div className="button">
@@ -145,14 +135,12 @@ function App() {
 
 export default App
 
-export function Icon({ data, name, hide ,rotate}) {
-
-  
+export function Icon({ data, show, hide, rotate }) {
   return (
     <>
-      <div className='item' onClick={() => { hide(data.id)}}>{data.title}
-        <motion.i className="iconfont" animate={{ rotate}}>&#xe618; </motion.i> </div>
-      {name === data.id && <div className='item-text'>{data.text}</div>}
+      <div className='item' onClick={() => { hide(data.id) }}>{data.title}
+        <motion.i className="iconfont" animate={{ rotate }}>&#xe618; </motion.i> </div>
+      {show === data.id && <div className='item-text'>{data.text}</div>}
     </>
   )
 }
